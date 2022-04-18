@@ -15,33 +15,31 @@
 
 /* General */
 html,body{
-    height: 100%;
+    min-height: 100%;
     scroll-behavior: smooth;
 }
 body{
-    background-color: hsl(216, 12%, 8%);
-}
-main{
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 100vh;
+    padding: 10px;
+    background-color: hsl(216, 12%, 8%);
+}
+main{
+    display: block;
+    margin-top: 15px;
 }
 
 /* Card */
 .card{
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 90%;
-    max-width: 415px;
-    min-height: 412px;
+    width: 85%;
+    max-width: 440px;
+    min-height: 420px;
     border-radius: 30px;
+    margin: 0 auto;
     padding: 30px 35px;
-    
     background: linear-gradient(360deg, rgb(27, 31, 35),  rgb(29, 36, 43));
 }
 .card h1{
@@ -60,9 +58,11 @@ main{
 
 /* Not Submitted Card */
 .not-submitted{
+    display: block;
     transition: .3s ease;
 }
 .not-submitted.hidden{
+    display: none;
     opacity: 0;
     visibility: hidden;
 }
@@ -83,6 +83,7 @@ main{
 .not-submitted ul{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
+    place-items: center;
     gap: 15px;
 
     width: 100%;
@@ -96,8 +97,8 @@ main{
     justify-content: center;
     align-items: center;
 
-    height: 48px;
-    width: 48px;
+    height: 40px;
+    width: 40px;
     padding: 10px;
     border-radius: 50%;
 
@@ -110,7 +111,7 @@ main{
 .not-submitted ul li.active{
     background-color: rgb(251, 116, 19);
     color: white;
-    transform: translateY(-4px);
+    transform: translateY(-2px);
 }
 .not-submitted ul li:hover{
     background-color: rgb(251, 116, 19);
@@ -153,14 +154,14 @@ main{
 
 /* Submitted Card */
 .submitted{
-    visibility: visible;
-    opacity: 1;
+    display: block;
     text-align: center;
     padding: 45px 30px;
     transition: .3s ease;
 }
 .submitted.hidden{
     opacity: 0;
+    display: none;
     visibility: hidden;
 }
 .submitted img{
@@ -194,48 +195,42 @@ main{
 
 /* Attribution Card */
 footer{
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 20px;
+    width: 100%;
     text-align: center;
-    width: 90%;
-    bottom: 0;
-    max-width: 300px;
-    padding: 8px 15px;
-    background-color: rgb(251, 116, 19);
-    border-radius: 20px 20px 0 0;
+    padding: 10px 20px;
 }
 footer p{
     font-size: .95rem;
     font-weight: 300;
-    color: rgb(33, 33, 33);
+    color: rgb(188, 188, 188);
 }
 footer a{
     position: relative;
-    color: rgb(33, 33, 33);
-}
-footer a::after{
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -1px;
-    width: 0;
-    height: 1px;
-    background-color: rgb(33, 33, 33);
-    transition: width .4s ease;
-    left: 50%;
-    transform: translateX(-50%);
-}
-footer a:hover::after{
-    width: 100%;
+    color: rgb(206, 206, 206);
 }
 
 /* Media Queries */
-@media(max-width: 415px){
+@media(max-width: 455px){
     .card{
         padding: 30px 25px;
     }
+    .not-submitted ul{
+        gap: 10px;
+    }
     .submitted{
         padding: 45px 25px;
+    }
+}
+@media(max-width: 271px){
+    .not-submitted ul{
+
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+
+        place-items: center;
+    }
+    .not-submitted ul li{
+        width: 35px;
+        height: 35px;
     }
 }
