@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Metas -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="">
+
+	<!-- General -->
+	<title>Frontend Mentor | Interactive rating component</title>
+	<link rel="shortcut icon" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	<link rel="stylesheet" href="./assets/style.css">
+	
+</head>
+
+<body>
+	<div class="card not-submitted">
+		<div class="icon">
+			<img src="./assets/images/icon-star.svg" alt="Star icon">
+		</div>
+		<h3>How did we do?</h3>
+		
+		<p>
+			Please let us know how we did with your
+			support request. All feedback is appreciated
+			to help us improve our offering!
+		</p>
+
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+
+		<button> Submit </button>
+
+	</div>
+
+	<div class="card submitted hidden">
+		<img src="./assets/images/illustration-thank-you.svg" alt="Credit Card Machine Illustration">
+		<p class="rating">You selected <span id="rate">-</span></span> out of 5</p>
+
+		<h3>Thank you!</h3>
+		
+		<p>
+			We appreciate you taking the time to give a
+			rating. If you ever need more support, don't
+			hesitate to get in touch!
+		</p>
+	</div>
+
+	
+
+	<div class="attribution">
+		<p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
+	</div>
+
+	<!-- Script -->
+	<script src="./assets/app.js"></script>
+</body>
+</html>
