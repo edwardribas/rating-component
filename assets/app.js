@@ -8,21 +8,9 @@ const submitBtn = document.querySelector('.not-submitted button'),
 // Selects a rating
 for(let i = 0; i < rateItems.length; i++){
     rateItems[i].onclick = () => {
-        rateItems.forEach(e => e.classList.remove('active'))
-        rateItems[i].classList.add('active')
+        rateItems.forEach(e => e.classList.remove('active'));
+        rateItems[i].classList.add('active');
     }
-}
-
-
-// Return the active rating when called.
-const classItem = () => {
-    let item;
-    rateItems.forEach(e => {
-        if(e.classList.contains('active')){
-            item = e.innerText;
-        }
-    })
-    return item;
 }
 
 // Self explanatory.
@@ -33,10 +21,9 @@ const toggleCards = () => {
 
 // Sets the rating on the span tag.
 submitBtn.onclick = () => {
-    let item = classItem();
-
-    if(item != undefined){
-        toggleCards()
-        ratingContainer.innerText = item
+    let item = document.querySelector(".not-submitted ul li.active")
+    if(item){
+        toggleCards();
+        ratingContainer.textContent = item.textContent;
     }
 }

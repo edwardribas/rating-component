@@ -35,12 +35,12 @@ main{
 /* Card */
 .card{
     width: 85%;
-    max-width: 440px;
-    min-height: 420px;
+    max-width: 470px;
+    min-height: 410px;
     border-radius: 30px;
     margin: 0 auto;
     padding: 30px 35px;
-    background: linear-gradient(360deg, rgb(27, 31, 35),  rgb(29, 36, 43));
+    background: linear-gradient(360deg, rgb(27, 31, 35),  rgb(30, 40, 49));
 }
 .card h1{
     color: rgb(255, 255, 255);
@@ -220,17 +220,5 @@ footer a{
     }
     .submitted{
         padding: 45px 25px;
-    }
-}
-@media(max-width: 271px){
-    .not-submitted ul{
-
-        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
-
-        place-items: center;
-    }
-    .not-submitted ul li{
-        width: 35px;
-        height: 35px;
     }
 }
